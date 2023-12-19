@@ -22,23 +22,23 @@ const About = () => {
   return (
     <div id="#about">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-8 gap-20 lg:py-32 py-12 items-center">
+        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-8 gap-20 py-12 items-center">
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <Eyebrow label="ABOUT US" />
-            <h2 className="font-display md:text-display-xl text-display-md font-normal pb-4">
-              We help to bring your <span className="italic">dream home</span>{" "}
-              to reality
+            <Eyebrow label="ABOUT US / 關於我們" />
+            <h2 className="font-display md:text-display-md text-display-sm font-normal pb-2">
+              <span className="font-bol">空間</span>為<span className="font-bol">行為</span>而生<br/>
+              <span className="pl-5 md:pl-40">是
+                <span className="font-bol">人文主義</span>非<span className="font-bol">行為主義</span>
+              </span>
             </h2>
             <p className="md:text-body-lg text-body-md font-light text-neutral-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus
-              fringilla dui amet faucibus nam. Erat id laoreet posuere etiam
-              morbi.
+              我們是間年輕公司，由兩位懷抱著熱忱和想法的年輕設計師於2022年攜手創立。
+              維域（維繫各元素空間及場域相互串聯而產生良好效應）
+              體現了我們對空間的期待，再結合專業的施工團隊下為屋主打造專屬的空間及居所！
             </p>
             <p className="md:text-body-lg text-body-md font-light text-neutral-700">
-              Tempor dolor elementum tellus non ipsum faucibus. Justo, magna
-              mauris posuere auctor justo. Habitant proin aliquet volutpat leo
-              ultricies. Dui blandit eget vitae turpis ultrices aliquet nunc.
-              Faucibus sit odio bibendum lobortis diam.
+              對我們來說每個設計過程中皆是獨特的，使用者的不同便賦予空間意義的差異，聆聽、溝通
+              並給予專業的建議，連繫個人想法、觀感與尺度美學間所構成獨有的空間和場域，便是維域。
             </p>
           </div>
           <div className="lg:col-span-6 flex flex-col gap-8 relative">

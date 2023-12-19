@@ -1,7 +1,11 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/flowbite/**/*.js",
+    "./node_modules/flowbite-react/**/*.js",
+  ],
   theme: {
     container: {
       center: true,
@@ -133,6 +137,7 @@ module.exports = {
     },
   },
   plugins: [
+    require("flowbite/plugin"),
     plugin(function ({ addUtilities }) {
       addUtilities({
         ".vertical-rl": {

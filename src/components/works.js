@@ -34,7 +34,7 @@ const Works = () => {
           <div className="grid xl:grid-cols-12 grid-cols-1 xl:gap-8 gap-10 items-center">
             <div className="xl:col-span-6 lg:col-span-8 flex flex-col xl:gap-24 md:gap-20 gap-10">
               <div className="flex flex-col gap-6">
-                <Eyebrow label="RECENT WORKS" />
+                <Eyebrow label="RECENT WORKS / 作品集 " />
                 <h3 className="font-display md:text-display-xl text-display-md font-normal pb-4">
                   Some of <span className="italic">our crafts</span> made with
                   love

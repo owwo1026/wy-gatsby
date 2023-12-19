@@ -15,6 +15,11 @@ const Hero = () => {
             formats: [AUTO, WEBP, AVIF]
           )
         }
+      },
+      heroimageList: allFile(filter: { relativeDirectory: { eq: "works" }, extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)|(webp)/" } }) {
+        nodes {
+          publicURL
+        }
       }
     }
   `);

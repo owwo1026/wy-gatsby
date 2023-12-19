@@ -21,6 +21,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "flowbite": "^2.2.1",
+    "flowbite-react": "^0.7.2",
     "gatsby": "^4.10.3",
     "gatsby-plugin-gatsby-cloud": "^4.10.1",
     "gatsby-plugin-google-gtag": "^4.10.0",

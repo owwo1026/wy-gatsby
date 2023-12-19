@@ -8,16 +8,18 @@ import Services from "../components/services";
 import Awards from "../components/awards";
 import About from "../components/about";
 import Works from "../components/works";
+import PortfolioInfo from "../components/portfolioInfo";
 
 const IndexPage = () => (
   <Layout>
     <Seo />
     <Hero />
-    <Awards />
+    {/* <Awards /> */}
     <About />
-    <Metrics />
+    {/* <Metrics /> */}
     <Services />
-    <Works />
+    {/* <Works /> */}
+    <PortfolioInfo/>
   </Layout>
 );
 

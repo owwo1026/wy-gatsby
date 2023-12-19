@@ -2,21 +2,16 @@
   {
     "name": "Instagram",
     "icon": "../images/social-icons/instagram.svg",
-    "href": "#"
+    "href": "http://instagram.com/wei.yu.design22"
   },
   {
     "name": "Facebook",
     "icon": "../images/social-icons/facebook.svg",
-    "href": "#"
+    "href": "https://www.facebook.com/wei.yu.design22"
   },
   {
-    "name": "YouTube",
-    "icon": "../images/social-icons/youtube.svg",
-    "href": "#"
-  },
-  {
-    "name": "Twitter",
-    "icon": "../images/social-icons/twitter.svg",
-    "href": "#"
+    "name": "Line",
+    "icon": "../images/social-icons/line.svg",
+    "href": "https://line.me/ti/p/4mBzKaqaTB"
   }
 ]
