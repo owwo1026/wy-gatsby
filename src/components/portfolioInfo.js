@@ -35,7 +35,7 @@ const PortfolioInfo = () => {
               <Carousel
                 indicators={false}
                 pauseOnHover
-                onSlideChange={(index) => console.log('onSlideChange()', index)}
+                // onSlideChange={(index) => console.log('onSlideChange()', index)}
               >
                 {data.portfolioInfo.nodes.map((node) => (
                   <img src={node.publicURL} alt="..." />
