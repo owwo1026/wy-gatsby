@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from "gatsby";
 
 const Footer = () => {
@@ -16,58 +16,39 @@ const Footer = () => {
       }
     }
   `);
+
+  useEffect(() => {
+    const chatbox = document.getElementById('fb-customer-chat');
+    if (chatbox) {
+      chatbox.setAttribute('page_id', '101262169275934');
+      chatbox.setAttribute('attribution', 'biz_inbox');
+      
+      window.fbAsyncInit = function () {
+        window.FB.init({
+          xfbml: true,
+          version: 'v14.0'
+        });
+      };
+
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    }
+  }, []);
+
   return (
     <footer>
+      <div id="fb-root"></div>
+      <div id="fb-customer-chat" className="fb-customerchat"></div>
       <div className="container mx-auto">
         <div className="mt-2 md:mb-20 mb-10">
           <hr className="text-neutral-300"></hr>
         </div>
-        {/* <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-8 gap-12">
-          <div className="lg:col-span-6 md:pr-24">
-            <h3 className="font-display md:text-display-lg text-display-sm font-normal pb-4">
-              Kick-start your dream home with us
-            </h3>
-            <a
-              href="/"
-              className="font-display md:text-display-lg text-display-sm italic text-primary-600 underline">
-              Send us a hi
-            </a>
-          </div>
-          <div className="lg:col-span-6 flex flex-col gap-8 xl:pl-80 lg:pl-48">
-            <div className="flex flex-col gap-2">
-              <p className="text-display-xs font-display font-normal">
-                Brooklyn, New York
-              </p>
-              <p className="text-body-sm font-light text-neutral-900">
-                962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United
-                State.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <p className="text-body-sm font-light text-neutral-900">
-                Email us at
-              </p>
-              <a
-                className="text-display-xs font-display font-normal text-primary-600"
-                href="mailto:hello@landify.design">
-                hello@landify.design
-              </a>
-            </div>
-            <div className="flex flex-col gap-2">
-              <p className="text-body-sm font-light text-neutral-900">
-                If you're hurry, quick call for us
-              </p>
-              <a
-                className="text-display-xs font-display font-normal text-primary-600"
-                href="/">
-                +8(663)125-08-59
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="md:my-20 my-10">
-          <hr className="text-neutral-300"></hr>
-        </div> */}
         <div className="flex lg:flex-row flex-col gap-8 lg:items-center justify-between md:mb-20 mb-10">
           <div className="text-body-md font-light">
             Copyright © 2022 WY DESIGN

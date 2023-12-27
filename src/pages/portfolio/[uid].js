@@ -1,9 +1,8 @@
-import React, { useRef, useState  } from 'react'
+import React, { useState  } from 'react'
 import { graphql } from "gatsby";
 import { Breadcrumb, Modal, Button, Carousel } from 'flowbite-react';
 import { HiHome } from 'react-icons/hi';
 import Layout from "../../components/layout";
-import { HiOutlineExclamationCircle } from 'react-icons/hi';
 
 const IndexPage = ({location, pageContext, data}) => {
   const myData = location.state.myData
@@ -27,7 +26,6 @@ const IndexPage = ({location, pageContext, data}) => {
             <Breadcrumb.Item>{breadcrumb.name}</Breadcrumb.Item>
           </Breadcrumb>
         )}
-        {/* {JSON.stringify(pageContext, null, 2)} */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {data.allFile.nodes.map((node) => (
             <a role="button" style={{ cursor: "pointer" }} onClick={() => setOpenModal(true)}>
@@ -41,7 +39,6 @@ const IndexPage = ({location, pageContext, data}) => {
         </div>
       </div>
       <Modal show={openModal} onClose={() => setOpenModal(false)} popup>
-        {/* <Modal.Header /> */}
         <Modal.Body>
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
             <Carousel>
@@ -53,11 +50,6 @@ const IndexPage = ({location, pageContext, data}) => {
             </Carousel>
           </div>
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button color="gray" onClick={() => setOpenModal(false)}>
-            Decline
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     </Layout>
   );

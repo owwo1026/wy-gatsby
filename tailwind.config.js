@@ -118,6 +118,13 @@ module.exports = {
           lineHeight: "16px",
         },
       ],
+      "body-xxs": [
+        "10px",
+        {
+          letterSpacing: "0em",
+          lineHeight: "16px",
+        },
+      ],
     },
     boxShadow: {
       xs: "0px 1px 2px rgba(17, 24, 39, 0.05)",

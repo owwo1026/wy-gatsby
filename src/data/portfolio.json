@@ -3,18 +3,18 @@
     "path": "portfolio/暮居-O宅",
     "image": "../images/portfolio/暮居-O宅/index.jpg",
     "title": "暮居 / Ｏ宅",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam."
+    "description": ""
   },
   {
     "path": "portfolio/侘寂 Wabi-sabi-Ｈ宅",
     "image": "../images/portfolio/侘寂 Wabi-sabi-Ｈ宅/index.jpg",
     "title": "侘寂 Wabi-sabi / Ｈ宅",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam."
+    "description": ""
   },
   {
     "path": "portfolio/小清新-Y宅",
     "image": "../images/portfolio/小清新-Y宅/index.jpg",
     "title": "小清新 / Ｙ宅",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus fringilla dui amet faucibus nam."
+    "description": ""
   }
 ]

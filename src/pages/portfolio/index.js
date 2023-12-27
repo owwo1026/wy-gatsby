@@ -4,7 +4,6 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../../components/layout";
 import WorkItem from "../../components/workItem";
-import Eyebrow from "../../components/eyebrow";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -36,7 +35,12 @@ const IndexPage = () => {
             <div className="grid xl:grid-cols-12 grid-cols-1 xl:gap-8 gap-10">
               <div className="xl:col-span-6 lg:col-span-8 flex flex-col xl:gap-24 md:gap-20 gap-10">
                 <div className="flex flex-col gap-6">
-                  <Eyebrow label="RECENT WORKS / 作品集 " />
+                  <div className="flex flex-row items-center">
+                    <hr className="w-16 text-primary-600"></hr>
+                    <p className="text-body-ml font-semibold tracking-widest text-primary-600 pl-4">
+                      PORTFOLIO / 作品集
+                    </p>
+                  </div>
                 </div>
                 {data.allPortfolioJson.nodes.slice(0, 1).map((node) => (
                   <WorkItem

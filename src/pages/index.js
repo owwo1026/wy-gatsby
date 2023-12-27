@@ -2,24 +2,18 @@ import React from "react";
 
 import Seo from "../components/seo";
 import Layout from "../components/layout";
-import Hero from "../components/hero";
-import Metrics from "../components/metrics";
 import Services from "../components/services";
-import Awards from "../components/awards";
 import About from "../components/about";
-import Works from "../components/works";
-import PortfolioInfo from "../components/portfolioInfo";
+import PortfolioCarousel from "../components/portfolioCarousel";
+import Top from "../components/top";
 
 const IndexPage = () => (
   <Layout>
     <Seo />
-    <Hero />
-    {/* <Awards /> */}
+    <Top />
     <About />
-    {/* <Metrics /> */}
     <Services />
-    {/* <Works /> */}
-    <PortfolioInfo/>
+    <PortfolioCarousel/>
   </Layout>
 );
 
