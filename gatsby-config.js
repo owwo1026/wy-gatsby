@@ -5,6 +5,9 @@ module.exports = {
     siteUrl: `https://wydesign22.com`,
     author: `@wydesign22`,
   },
+  // flags: {
+  //   DEV_SSR: true
+  // },
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,

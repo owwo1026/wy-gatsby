@@ -18,6 +18,7 @@ const Footer = () => {
   `);
 
   useEffect(() => {
+    if (typeof document !== 'undefined') {
     const chatbox = document.getElementById('fb-customer-chat');
     if (chatbox) {
       chatbox.setAttribute('page_id', '101262169275934');
@@ -39,6 +40,7 @@ const Footer = () => {
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     }
+  }
   }, []);
 
   return (

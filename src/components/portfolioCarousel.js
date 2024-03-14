@@ -18,7 +18,7 @@ const PortfolioCarousel = () => {
     <div id="#portfolioCarousel">
       <div className="container mx-auto">
         <div className="flex flex-col gap-12 lg:py-28 md:py-24 py-12">
-          <div className="grid xl:grid-cols-12 grid-cols-1 xl:gap-8 gap-10 items-center">
+          <div className="grid xl:grid-cols-12 grid-cols-1 md:gap-8 items-center">
             <div div className="lg:col-span-5 flex flex-col gap-6">
               <Eyebrow label="BEST / 精選集" />
               <p className="md:text-body-lg text-body-md font-light text-neutral-700">
@@ -33,10 +33,14 @@ const PortfolioCarousel = () => {
             <div className="lg:col-span-7 flex flex-col gap-8 relative h-72 sm:h-96">
               <Carousel
                 indicators={false}
+                slideInterval={3000}
                 pauseOnHover
               >
                 {data.portfolioCarousel.nodes.map((node) => (
-                  <img src={node.publicURL} alt="..." />
+                  <img
+                    src={node.publicURL}
+                    alt={node.name}
+                  />
                 ))}
               </Carousel>
             </div>

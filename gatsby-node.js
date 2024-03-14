@@ -31,6 +31,8 @@ exports.createPages = async ({ graphql, actions }) => {
         id: node.id,
         image: node.image,
         relativeDirectory: node.path,
+        title: node.title,
+        description: node.description,
       },
     });
   });

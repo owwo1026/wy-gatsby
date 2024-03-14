@@ -64,3 +64,12 @@ If you need the design files, you can download them from Figma's Community 👉 
 Deploy this template with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/landifydesign/inteo-gatsby-template)
+
+## 🚀 Deploy on FireBase Hosting
+    管理員開啟cmd
+    ```shell
+      nvm use 20
+      firebase login
+      firebase init
+      firebase deploy
+    ```

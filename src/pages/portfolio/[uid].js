@@ -1,21 +1,30 @@
-import React, { useState  } from 'react'
+import React, { useState, useEffect  } from 'react'
 import { graphql } from "gatsby";
-import { Breadcrumb, Modal, Button, Carousel } from 'flowbite-react';
+import { Breadcrumb, Modal } from 'flowbite-react';
 import { HiHome } from 'react-icons/hi';
 import Layout from "../../components/layout";
+import MyCarousel from "../../components/MyCarousel"
+import { HiOutlineX } from "react-icons/hi";
 
 const IndexPage = ({location, pageContext, data}) => {
-  const myData = location.state.myData
-  console.log('props-mydata', location.state.myData)
-  console.log('props-pageContext', pageContext)
-  console.log('props-data', data)
+  const { id, image, title, description, relativeDirectory } = pageContext
+  const [activeIndex, setActiveIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const handleClose = () => setOpenModal(false);
+  const handleShow = () => setOpenModal(true);
+
+  function imageClick(e, id) {
+    setActiveIndex(id);
+    handleShow();
+  }
+
   const breadcrumb = { 
     parentName: "portfolio",
     parentPath: "/portfolio/",
-    name: myData.title,
-    path: `/portfolio/${pageContext.id}`,
+    name: title,
+    path: `/portfolio/${id}`,
   };
+
   return (
     <Layout breadcrumb={breadcrumb}>
       <div id="#protfolioList"  className="container mx-auto md:py-20">
@@ -26,37 +35,39 @@ const IndexPage = ({location, pageContext, data}) => {
             <Breadcrumb.Item>{breadcrumb.name}</Breadcrumb.Item>
           </Breadcrumb>
         )}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {data.allFile.nodes.map((node) => (
-            <a role="button" style={{ cursor: "pointer" }} onClick={() => setOpenModal(true)}>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src={node.publicURL}
-                  alt={node.name}
-                />
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {data.allFile.nodes.map((node, idx) => (
+            <a
+              key={node.id}
+              id={node.id}
+              role="button"
+              style={{ cursor: "pointer" }}
+              onClick={(e) => imageClick(e, idx)}
+              className="overflow-hidden h-52 rounded-lg"
+            >
+              <img
+                id={idx}
+                className="w-full min-h-full"
+                src={node.publicURL}
+                alt={node.name}
+              />
             </a>
           ))}
         </div>
       </div>
-      <Modal show={openModal} onClose={() => setOpenModal(false)} popup>
-        <Modal.Body>
-          <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-            <Carousel>
-              <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-              <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
-            </Carousel>
-          </div>
-        </Modal.Body>
+      <Modal id='modal' position="center" show={openModal} onClose={handleClose} dismissible>
+        <MyCarousel
+          onClose={handleClose}
+          data={data.allFile.nodes}
+          activeIndex={activeIndex}
+        />
       </Modal>
     </Layout>
   );
 };
 
 export const pageQuery = graphql`
-  query DataQuery($relativeDirectory: String!) {
+  query DataQuery($relativeDirectory: String! = "") {
     allFile(
       filter: {
         sourceInstanceName: { eq: "images" },

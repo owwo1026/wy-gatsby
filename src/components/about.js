@@ -6,7 +6,7 @@ import Eyebrow from "./eyebrow";
 const About = () => {
   const data = useStaticQuery(graphql`
     {
-      aboutimage: file(relativePath: { eq: "about-creative.png" }) {
+      aboutimage: file(relativePath: { eq: "about-creative.jpg" }) {
         childImageSharp {
           gatsbyImageData(
             width: 592
@@ -25,7 +25,7 @@ const About = () => {
             <Eyebrow label="ABOUT US / 關於我們" />
             <h2 className="font-display md:text-display-md text-display-sm font-normal pb-2">
               <span className="font-bol">空間</span>為<span className="font-bol">行為</span>而生<br/>
-              <span className="pl-5 md:pl-40">是
+              <span className="md:pl-40">是
                 <span className="font-bol">人文主義</span>非<span className="font-bol">行為主義</span>
               </span>
             </h2>
@@ -39,7 +39,7 @@ const About = () => {
               並給予專業的建議，連繫個人想法、觀感與尺度美學間所構成獨有的空間和場域，便是維域。
             </p>
           </div>
-          <div className="lg:col-span-6 flex flex-col gap-8 relative">
+          <div className="lg:col-span-6 flex flex-col gap-8 relative p-8">
             <GatsbyImage
               image={getImage(data.aboutimage)}
               alt="Interior Design"

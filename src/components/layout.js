@@ -9,6 +9,7 @@ const Layout = ({ children }) => (
   <>
     <Helmet>
       <script src="https://gumroad.com/js/gumroad.js" />
+      <script src="flowbite/dist/flowbite.min.js"></script>
     </Helmet>
     <Header />
     <div>

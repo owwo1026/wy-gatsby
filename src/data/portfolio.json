@@ -1,20 +1,38 @@
 [
   {
-    "path": "portfolio/暮居-O宅",
-    "image": "../images/portfolio/暮居-O宅/index.jpg",
-    "title": "暮居 / Ｏ宅",
-    "description": ""
-  },
-  {
     "path": "portfolio/侘寂 Wabi-sabi-Ｈ宅",
     "image": "../images/portfolio/侘寂 Wabi-sabi-Ｈ宅/index.jpg",
     "title": "侘寂 Wabi-sabi / Ｈ宅",
     "description": ""
   },
   {
+    "path": "portfolio/島夢交融 Japandi-Ｈ宅",
+    "image": "../images/portfolio/島夢交融 Japandi-Ｈ宅/index.jpg",
+    "title": "島夢交融 Japandi / Ｈ宅",
+    "description": ""
+  },
+  {
+    "path": "portfolio/溫馨北歐-ＣＨ宅",
+    "image": "../images/portfolio/溫馨北歐-ＣＨ宅/index.jpg",
+    "title": "溫馨北歐 / ＣＨ宅",
+    "description": ""
+  },
+  {
+    "path": "portfolio/合闔-Ｗ宅",
+    "image": "../images/portfolio/合闔-Ｗ宅/index.jpg",
+    "title": "《合。闔》 / Ｗ宅",
+    "description": ""
+  },
+  {
+    "path": "portfolio/暮居-O宅",
+    "image": "../images/portfolio/暮居-O宅/index.jpg",
+    "title": "暮居 / O宅",
+    "description": ""
+  },
+  {
     "path": "portfolio/小清新-Y宅",
     "image": "../images/portfolio/小清新-Y宅/index.jpg",
-    "title": "小清新 / Ｙ宅",
+    "title": "小清新 / Y宅",
     "description": ""
   }
 ]
