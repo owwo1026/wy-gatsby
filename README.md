@@ -71,5 +71,6 @@ Deploy this template with one click on [Gatsby Cloud](https://www.gatsbyjs.com/c
       nvm use 20
       firebase login
       firebase init
+      gatsby build
       firebase deploy
     ```

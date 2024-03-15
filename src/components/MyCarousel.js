@@ -46,8 +46,8 @@ const MyCarousel = ({data, activeIndex, onClose}) => {
   const sm = " -translate-y-0 "
   const md = " md:-translate-y-1/2 "
   const lg = " lg:-translate-y-1/2 "
-  const xl = " xl:-translate-y-1/2 "
-  const xxl = " 2xl:-translate-y-1/2 "
+  const xl = " xl:-translate-y-1/2 xl:w-[1080px]"
+  const xxl = " 2xl:-translate-y-1/2 2xl:w-[1080px]"
 
   return (
     <div id="my-carousel" className={`absolute top-1/2 left-1/2 transform -translate-x-1/2  overflow-hidden h-[90vh] w-full` + sm + md + lg + xl + xxl}>

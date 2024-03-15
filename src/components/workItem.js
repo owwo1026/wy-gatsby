@@ -13,7 +13,7 @@ const WorkItem = (data) => {
       className={className + mdClass}
       // state={{ myData: data }}
     >
-      <div className="rounded border-4 border-neutral-500/100 p-1">
+      <div className="rounded border-2 border-neutral-500/100 p-1">
         <GatsbyImage image={getImage(image)} alt="WY Design" />
         <div className="flex flex-col self-stretch pt-3 pl-2">
           <h3 className="font-display text-display-xs pb-4">{title}</h3>
