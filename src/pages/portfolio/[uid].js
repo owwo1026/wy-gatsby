@@ -7,6 +7,9 @@ import MyCarousel from "../../components/MyCarousel"
 import { HiOutlineX } from "react-icons/hi";
 
 const IndexPage = ({location, pageContext, data}) => {
+  data.allFile.nodes.sort(function(a, b) {
+      return parseInt(a.name) - parseInt(b.name);
+  });
   const { id, image, title, description, relativeDirectory } = pageContext
   const [activeIndex, setActiveIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);

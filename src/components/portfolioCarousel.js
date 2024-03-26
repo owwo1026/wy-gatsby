@@ -26,7 +26,7 @@ const PortfolioCarousel = () => {
                 重視人與空間的對話與連結和空間帶給使用者的感受與效應，因為好的設計元素及手法，使人產生正向感受與氛圍，所以追求各設計元素間的和諧與比例，因為好的設計元素及手法，能促使人與人產生更多的情感連結與互動，所以追求各設計元素間的配置與定位帶給使用者的意義。
               </p>
             </div>
-            <div className="lg:col-span-7 flex flex-col gap-8 relative h-72 sm:h-96">
+            <div className="lg:col-span-7 flex flex-col gap-8 relative h-72 sm:h-[29rem] lg:h-[40rem] xl:h-[29rem]">
               <Carousel
                 indicators={false}
                 slideInterval={3000}
