@@ -93,7 +93,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle="聯絡我們">
       <div id="#contact">
         <div className="container mx-auto">
           <div className="flex flex-col gap-12 lg:py-28 md:py-24 py-12">

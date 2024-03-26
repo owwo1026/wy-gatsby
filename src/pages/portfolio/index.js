@@ -27,7 +27,7 @@ const IndexPage = () => {
     }
   `);
   return (
-    <Layout>
+    <Layout pageTitle="作品集">
       <div id="#protfolio">
         <div className="container mx-auto h-lvh">
           <div className="flex flex-col gap-12 lg:py-12 md:py-8 py-4 mb-56">
