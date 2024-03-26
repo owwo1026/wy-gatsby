@@ -34,7 +34,7 @@ const IndexPage = () => {
             <div className="flex flex-col xl:gap-20 md:gap-18 gap-10">
               <div className="flex flex-row items-center">
                 <hr className="w-16 text-primary-600"></hr>
-                <p className="text-body-xl font-semibold tracking-widest text-primary-600 pl-4">
+                <p className="text-body-md md:text-body-xl font-semibold tracking-widest text-primary-600 pl-4">
                   PORTFOLIO / 作品集
                 </p>
               </div>
