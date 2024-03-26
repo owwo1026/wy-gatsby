@@ -37,7 +37,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ["Playfair Display", "sans-serif"],
+      display: ["Outfit", "sans-serif"],
       body: ["Outfit", "sans-serif"],
     },
     fontSize: {

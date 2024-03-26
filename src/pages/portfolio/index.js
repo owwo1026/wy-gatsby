@@ -31,10 +31,10 @@ const IndexPage = () => {
       <div id="#protfolio">
         <div className="container mx-auto h-lvh">
           <div className="flex flex-col gap-12 lg:py-12 md:py-8 py-4 mb-56">
-            <div className="flex flex-col xl:gap-24 md:gap-20 gap-10">
+            <div className="flex flex-col xl:gap-20 md:gap-18 gap-10">
               <div className="flex flex-row items-center">
                 <hr className="w-16 text-primary-600"></hr>
-                <p className="text-body-ml font-semibold tracking-widest text-primary-600 pl-4">
+                <p className="text-body-xl font-semibold tracking-widest text-primary-600 pl-4">
                   PORTFOLIO / 作品集
                 </p>
               </div>

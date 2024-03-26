@@ -32,7 +32,7 @@ const IndexPage = ({location, pageContext, data}) => {
     <Layout breadcrumb={breadcrumb}>
       <div id="#protfolioList"  className="container mx-auto md:py-20">
         {breadcrumb && (
-          <Breadcrumb className="pb-10">
+          <Breadcrumb className="text-body-xl pb-10">
             <Breadcrumb.Item href="/" icon={HiHome}>Home</Breadcrumb.Item>
             <Breadcrumb.Item href={breadcrumb.parentPath}>{breadcrumb.parentName}</Breadcrumb.Item>
             <Breadcrumb.Item>{breadcrumb.name}</Breadcrumb.Item>

@@ -15,8 +15,8 @@ const WorkItem = (data) => {
     >
       <div className="rounded border-2 border-neutral-500/100 p-1">
         <GatsbyImage image={getImage(image)} alt="WY Design" />
-        <div className="flex flex-col self-stretch pt-3 pl-2">
-          <h3 className="font-display text-display-xs pb-4">{title}</h3>
+        <div className="flex flex-col self-stretch py-3 px-2">
+          <p className="flex justify-center text-body-xl tracking-widest pl-4">{title}</p>
           { description != "" && description != null &&
             <p className="text-body-lg font-light text-neutral-700">
               {description}
