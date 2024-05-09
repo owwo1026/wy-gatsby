@@ -24,6 +24,18 @@
     "description": ""
   },
   {
+    "path": "portfolio/貨櫃屋",
+    "image": "../images/portfolio/貨櫃屋/index.jpg",
+    "title": "<貨櫃屋>",
+    "description": ""
+  },
+  {
+    "path": "portfolio/手機維修中心",
+    "image": "../images/portfolio/手機維修中心/index.jpg",
+    "title": "<手機維修中心>",
+    "description": ""
+  },
+  {
     "path": "portfolio/暮居-O宅",
     "image": "../images/portfolio/暮居-O宅/index.jpg",
     "title": "<暮居>",

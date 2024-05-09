@@ -69,6 +69,8 @@ Deploy this template with one click on [Gatsby Cloud](https://www.gatsbyjs.com/c
     管理員開啟cmd
     ```shell
       nvm use 20
+      D:
+      cd Git\wy-gatsby
       firebase login
       firebase init
       gatsby build
