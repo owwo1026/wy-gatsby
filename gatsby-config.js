@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `維域設計 | WY Design | 室內設計公司`,
     description: `維域設計室內裝修有限公司 | 台中室內設計 推薦北屯專業室內裝修施作工程 首選 住宅空間規劃 商空規劃設計 商業店面設計裝潢 老屋中古屋舊屋翻新 價格 客製化 新成屋客變 系統櫃好評 優質豪宅設計評價`,
+    keywords: `台中室內設計, 室內裝修, 商業空間設計, 住宅設計, 老屋翻新, 系統櫃設計, 豪宅設計, 住宅空間規劃, 商業店面裝潢, 空間設計, 客製化設計, 新成屋客變`,
     siteUrl: `https://wydesign22.com`,
     author: `@wydesign22`,
   },

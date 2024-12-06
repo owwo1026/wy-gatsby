@@ -14,6 +14,7 @@ function Seo({ lang, meta, title, description, image, url }) {
           title
           description
           author
+          keywords
         }
       }
     }
@@ -21,6 +22,7 @@ function Seo({ lang, meta, title, description, image, url }) {
 
   const siteTitle = title || site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
+  const keywords = site.siteMetadata.keywords;
   const siteUrl = site.siteMetadata.siteUrl;
   const ogImage = image || previewImage;
   const ogUrl = `/${url}` || '';
@@ -38,7 +40,7 @@ function Seo({ lang, meta, title, description, image, url }) {
         },
         {
           name: `keywords`,
-          content: `維域設計,室內設計,住宅設計,實品屋設計,辦公室設計,室內設計公司,室內設計裝潢,居家空間,室內裝修,裝潢施⼯設計,空間整體設計,空間規劃,設計規畫,⽼屋翻新,客變設計,台中室內設計,豪宅設計`,
+          content: keywords,
         },
         {
           property: `og:image`,
