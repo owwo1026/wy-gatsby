@@ -1,31 +1,29 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import previewImage from "../images/index.jpg";
+import previewImage from '../images/index.jpg';
 
 function Seo({ lang, meta, title, description, image, url }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            siteUrl
-            title
-            description
-            author
-          }
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          siteUrl
+          title
+          description
+          author
         }
       }
-    `
-  );
+    }
+  `);
 
   const siteTitle = title || site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
   const siteUrl = site.siteMetadata.siteUrl;
   const ogImage = image || previewImage;
-  const ogUrl = `/${url}` || "";
+  const ogUrl = `/${url}` || '';
 
   return (
     <Helmet

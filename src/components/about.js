@@ -1,18 +1,14 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Eyebrow from "./eyebrow";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Eyebrow from './eyebrow';
 
 const About = () => {
   const data = useStaticQuery(graphql`
     {
       aboutimage: file(relativePath: { eq: "about-creative.jpg" }) {
         childImageSharp {
-          gatsbyImageData(
-            width: 592
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-          )
+          gatsbyImageData(width: 592, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
@@ -24,9 +20,10 @@ const About = () => {
           <div className="lg:col-span-6 flex flex-col gap-6">
             <Eyebrow label="ABOUT US / 關於我們" />
             <h2 className="font-display xl:text-display-md text-display-xs font-normal pb-2">
-              <span className="font-bol">空間</span>為<span className="font-bol">行為</span>而生<br/>
-              <span className="md:pl-40">是
-                <span className="font-bol">人文主義</span>非<span className="font-bol">行為主義</span>
+              <span className="font-bol">空間</span>為<span className="font-bol">行為</span>而生
+              <br />
+              <span className="md:pl-40">
+                是<span className="font-bol">人文主義</span>非<span className="font-bol">行為主義</span>
               </span>
             </h2>
             <p className="md:text-body-lg text-body-md font-light text-neutral-700 text-justify">
@@ -37,10 +34,7 @@ const About = () => {
             </p>
           </div>
           <div className="lg:col-span-6 flex flex-col gap-8 relative md:p-8">
-            <GatsbyImage
-              image={getImage(data.aboutimage)}
-              alt="Interior Design"
-            />
+            <GatsbyImage image={getImage(data.aboutimage)} alt="Interior Design" />
           </div>
         </div>
       </div>

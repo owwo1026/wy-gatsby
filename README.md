@@ -66,6 +66,7 @@ Deploy this template with one click on [Gatsby Cloud](https://www.gatsbyjs.com/c
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/landifydesign/inteo-gatsby-template)
 
 ## 🚀 Deploy on FireBase Hosting
+
     管理員開啟cmd
     ```shell
       nvm use 20
