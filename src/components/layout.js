@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { z } from 'zod';
 
-import Header from './header';
-import Footer from './footer';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import { customErrorMap } from '@/utils/zod-extend';
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -16,6 +18,12 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `);
+
+  useEffect(() => {
+    // 設定全局錯誤訊息
+    z.setErrorMap(customErrorMap);
+  }, []);
+
   return (
     <>
       <Helmet>

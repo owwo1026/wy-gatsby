@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Breadcrumb, Modal } from 'flowbite-react';
 import { HiHome } from 'react-icons/hi';
-import Layout from '../../components/layout';
-import MyCarousel from '../../components/MyCarousel';
-import { HiOutlineX } from 'react-icons/hi';
+import Layout from '@/components/layout';
+import MyCarousel from '@/components/MyCarousel';
 
 const IndexPage = ({ location, pageContext, data }) => {
   data.allFile.nodes.sort(function (a, b) {
@@ -32,7 +31,7 @@ const IndexPage = ({ location, pageContext, data }) => {
     <Layout breadcrumb={breadcrumb} pageTitle={breadcrumb.name}>
       <div id="#portfolioList" className="container mx-auto md:py-20">
         {breadcrumb && (
-          <Breadcrumb className="text-body-xl pb-10">
+          <Breadcrumb className="text-body-md md:text-body-xl pb-10">
             <Breadcrumb.Item href="/" icon={HiHome}>
               Home
             </Breadcrumb.Item>
@@ -55,7 +54,18 @@ const IndexPage = ({ location, pageContext, data }) => {
           ))}
         </div>
       </div>
-      <Modal id="modal" position="center" show={openModal} onClose={handleClose} dismissible>
+      <Modal
+        id="modal"
+        position="center"
+        show={openModal}
+        onClose={handleClose}
+        dismissible
+        theme={{
+          content: {
+            inner: 'relative flex max-h-[90dvh] flex-col rounded-lg shadow bg-transaction',
+          },
+        }}
+      >
         <MyCarousel onClose={handleClose} data={data.allFile.nodes} activeIndex={activeIndex} />
       </Modal>
     </Layout>

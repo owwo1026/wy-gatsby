@@ -56,8 +56,15 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-offline`,
-    // Use this plugin if you are deploying you site to Gatsby Cloud
-    // To learn more, visit: https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/deploying-to-gatsby-cloud/
-    // `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@': `${__dirname}/src`,
+          '@public': `${__dirname}/public`,
+        },
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+      },
+    },
   ],
 };

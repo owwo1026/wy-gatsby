@@ -52,9 +52,9 @@ const Footer = () => {
         <div className="mt-2 md:mb-20 mb-10">
           <hr className="text-neutral-300"></hr>
         </div>
-        <div className="flex lg:flex-row flex-col gap-8 lg:items-center justify-between md:mb-20 mb-10">
+        <div className="flex md:flex-row flex-col gap-8 md:items-center justify-between md:mb-20 mb-10">
           <div className="text-body-md font-light">Copyright © 2022 WY DESIGN</div>
-          <div className="flex lg:flex-row flex-col lg:items-center md:gap-6 gap-4">
+          <div className="flex md:flex-row flex-col md:items-center md:gap-6 gap-4">
             <div className="flex flex-row items-center opacity-70">
               <p className="text-body-sm font-semibold tracking-widest text-neutral-700 pr-4">CONNECT</p>
               <hr className="w-16 text-neutral-700"></hr>
