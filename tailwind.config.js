@@ -40,8 +40,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ['Outfit', 'sans-serif'],
-      body: ['Outfit', 'sans-serif'],
+      display: ['Noto Sans Traditional Chinese', 'Outfit', 'sans-serif'],
+      body: ['Noto Sans Traditional Chinese', 'Outfit', 'sans-serif'],
     },
     fontSize: {
       'display-2xl': [

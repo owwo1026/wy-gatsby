@@ -120,7 +120,7 @@ const IndexPage = () => {
     <Layout pageTitle="聯絡我們">
       <div id="#contact">
         <div className="container mx-auto">
-          <div className="flex flex-col gap-12 lg:py-28 md:py-24 py-12">
+          <div className="flex flex-col gap-12 lg:py-12 md:py-8 py-4 mb-56">
             <Eyebrow label="CONTACT US / 聯絡我們" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-18">
               <div div className="flex flex-col gap-10">

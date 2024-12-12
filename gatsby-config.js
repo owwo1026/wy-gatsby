@@ -66,5 +66,12 @@ module.exports = {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Noto Sans Traditional Chinese\:100,200,300,400,500,600`],
+        display: 'swap',
+      },
+    },
   ],
 };

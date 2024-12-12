@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Breadcrumb, Modal } from 'flowbite-react';
 import { HiHome } from 'react-icons/hi';
 import Layout from '@/components/layout';
-import MyCarousel from '@/components/MyCarousel';
+import Carousel from '@/components/ui/carousel';
 
 const IndexPage = ({ location, pageContext, data }) => {
   data.allFile.nodes.sort(function (a, b) {
@@ -49,7 +49,7 @@ const IndexPage = ({ location, pageContext, data }) => {
               onClick={(e) => imageClick(e, idx)}
               className="overflow-hidden h-52 rounded-lg"
             >
-              <img id={idx} className="w-full min-h-full" src={node.publicURL} alt={node.name} />
+              <img id={idx} className="object-cover w-full min-h-full" src={node.publicURL} alt={node.name} />
             </a>
           ))}
         </div>
@@ -60,13 +60,14 @@ const IndexPage = ({ location, pageContext, data }) => {
         show={openModal}
         onClose={handleClose}
         dismissible
+        size="7xl"
         theme={{
           content: {
             inner: 'relative flex max-h-[90dvh] flex-col rounded-lg shadow bg-transaction',
           },
         }}
       >
-        <MyCarousel onClose={handleClose} data={data.allFile.nodes} activeIndex={activeIndex} />
+        <Carousel onClose={handleClose} data={data.allFile.nodes} activeIndex={activeIndex} />
       </Modal>
     </Layout>
   );
