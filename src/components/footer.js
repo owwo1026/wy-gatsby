@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { motion } from 'framer-motion';
+import { FaInstagram, FaFacebook, FaLine } from 'react-icons/fa';
+import { BiArrowToTop } from 'react-icons/bi';
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -17,37 +20,105 @@ const Footer = () => {
     }
   `);
 
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const chatbox = document.getElementById('fb-customer-chat');
-      if (chatbox) {
-        chatbox.setAttribute('page_id', '101262169275934');
-        chatbox.setAttribute('attribution', 'biz_inbox');
-
-        window.fbAsyncInit = function () {
-          window.FB.init({
-            xfbml: true,
-            version: 'v14.0',
-          });
-        };
-
-        (function (d, s, id) {
-          var js,
-            fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'facebook-jssdk');
-      }
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        if (window.scrollY > 500) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }
   }, []);
 
+  const scrollToTop = () => {
+    const start = window.scrollY;
+    const duration = 500;
+    const startTime = performance.now();
+    const scrollAnimation = (currentTime) => {
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const easeInOut = 0.5 - Math.cos(progress * Math.PI) / 2;
+
+      window.scrollTo(0, start * (1 - easeInOut));
+
+      if (progress < 1) {
+        requestAnimationFrame(scrollAnimation);
+      }
+    };
+    requestAnimationFrame(scrollAnimation);
+  };
+
+  const allSocialDataList = useMemo(() => {
+    return data.allSocialJson.nodes?.map((node) => {
+      let iconElement = null;
+      switch (node.name) {
+        case 'Instagram':
+          iconElement = <FaInstagram size={40} />;
+          break;
+        case 'Facebook':
+          iconElement = <FaFacebook size={40} />;
+          break;
+        case 'Line':
+          iconElement = <FaLine size={40} />;
+          break;
+        default:
+          break;
+      }
+      return {
+        ...node,
+        iconElement,
+      };
+    });
+  }, [data.allSocialJson.nodes]);
+
   return (
     <footer>
-      <div id="fb-root"></div>
-      <div id="fb-customer-chat" className="fb-customerchat"></div>
+      <div className="relative">
+        <div className="fixed bottom-20 right-5 flex flex-col gap-5 z-50">
+          {allSocialDataList?.map((link, index) => (
+            <motion.a
+              key={index}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-80"
+              whileHover={{
+                scale: 1.2,
+                opacity: 1,
+                transition: { duration: 0.3 },
+              }}
+            >
+              {React.cloneElement(link.iconElement, { className: 'text-primary-900' })}
+            </motion.a>
+          ))}
+          {isVisible && (
+            <motion.a
+              href="#top"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTop();
+              }}
+              className="opacity-80"
+              whileHover={{
+                scale: 1.2,
+                opacity: 1,
+                transition: { duration: 0.3 },
+              }}
+              title="Back to Top"
+            >
+              <BiArrowToTop size={40} className="text-primary-900" />
+            </motion.a>
+          )}
+        </div>
+      </div>
       <div className="container mx-auto">
         <div className="mt-2 md:mb-20 mb-10">
           <hr className="text-neutral-300"></hr>
@@ -60,7 +131,7 @@ const Footer = () => {
               <hr className="w-16 text-neutral-700"></hr>
             </div>
             <div className="flex flex-row  items-center gap-6">
-              {data.allSocialJson.nodes.map((node) => (
+              {allSocialDataList?.map((node) => (
                 <a href={node.href} key={node.name} target="_blank" rel="noreferrer">
                   <img className="h-10 w-10" src={node.icon.publicURL} alt={node.name} />
                 </a>
