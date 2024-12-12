@@ -61,13 +61,13 @@ const Footer = () => {
       let iconElement = null;
       switch (node.name) {
         case 'Instagram':
-          iconElement = <FaInstagram size={40} />;
+          iconElement = <FaInstagram size={30} />;
           break;
         case 'Facebook':
-          iconElement = <FaFacebook size={40} />;
+          iconElement = <FaFacebook size={30} />;
           break;
         case 'Line':
-          iconElement = <FaLine size={40} />;
+          iconElement = <FaLine size={30} />;
           break;
         default:
           break;
@@ -89,7 +89,7 @@ const Footer = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="opacity-80"
+              className="opacity-80 hidden md:block"
               whileHover={{
                 scale: 1.2,
                 opacity: 1,
@@ -114,7 +114,7 @@ const Footer = () => {
               }}
               title="Back to Top"
             >
-              <BiArrowToTop size={40} className="text-primary-900" />
+              <BiArrowToTop size={30} className="text-primary-900" />
             </motion.a>
           )}
         </div>

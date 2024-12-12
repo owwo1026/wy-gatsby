@@ -27,6 +27,7 @@
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
     "flowbite": "^2.2.1",
     "flowbite-react": "^0.7.3",
     "gatsby": "^5.0.0",
@@ -54,6 +55,7 @@
     "react-hook-form": "^7.51.0",
     "react-icons": "^5.0.1",
     "react-scroll": "^1.8.7",
+    "resend": "^4.0.1",
     "swiper": "^11.1.15",
     "tailwind-merge": "^2.5.5",
     "zod": "^3.24.1"

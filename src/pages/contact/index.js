@@ -6,6 +6,8 @@ import axios from 'axios';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
+import ContactEmail from '@/data/email/contactEmail';
+import { sendContactEmail } from '@/utils/emailUtils';
 import Layout from '@/components/layout';
 import Eyebrow from '@/components/eyebrow';
 import FormWrapper from '@/components/wrapper/form-wrapper';
@@ -112,8 +114,12 @@ const IndexPage = () => {
       `\n預算: ${data.budgetRange ?? ''}` +
       `\n需求說明: ${data.remark ?? ''}` +
       '\n==== [END] ====';
-    // console.log('onFinish msg', msg);
-    await postNotify(msg);
+    console.log('onFinish msg', msg);
+    await sendContactEmail({
+      subject: `[維域設計-官網] 新客人{${data.name}} 留言通知`,
+      template: ContactEmail(data),
+    });
+    // await postNotify(msg);
   };
 
   return (
