@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { cn } from '@/utils/class-names';
 
 const Button = ({ label, link, size, icon }) => (
   <a
-    className={`button flex gap-1 items-center justify-center bg-primary-600 text-white font-semibold  ${
+    className={`button flex gap-1 items-center justify-center bg-primary-600 text-white font-semibold rounded-md ${
       size === 'lg' ? 'px-6 py-4 text-body-md' : 'px-5 py-3 text-body-sm'
     }`}
     href={link}

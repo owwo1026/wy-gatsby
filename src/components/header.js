@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { IoClose, IoMenu } from 'react-icons/io5';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Collapse } from 'flowbite';
 
 import Button from '@/components/button';
@@ -9,10 +9,11 @@ import Logo2 from '@/images/logos/wy-logo-4.png';
 import { cn } from '@/utils/class-names';
 
 const Header = () => {
-  const navigation = [{ name: 'Portfolio', href: '/portfolio' }];
-  const mobileNavigation = [
-    { name: 'Portfolio / 作品集', href: '/portfolio' },
-    { name: 'Contact Us / 聯絡我們', href: '/contact' },
+  const navigation = [
+    { name: '關於我們' ,enName: 'About', href: '/' },
+    { name: '服務流程', enName: 'Service', href: '/service' },
+    { name: '作品集', enName: 'Portfolio', href: '/portfolio' },
+    { name: '聯絡資訊', enName: 'Contact', href: '/contact' },
   ];
   const [isMobile, setIsMobile] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +45,8 @@ const Header = () => {
         <nav className="bg-transparent px-0 py-2.5 md:my-3">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 px-0">
             <a href="/" className="flex flex-nowrap">
-              <img src={Logo1} height="48" className="h-12 sm:h-16" alt="WY Design Logo" />
-              <img src={Logo2} height="48" className="h-12 sm:h-16" alt="WY Design Logo" />
+              <img src={Logo1} height="48" className="h-12 lg:h-16" alt="WY Design Logo" />
+              <img src={Logo2} height="48" className="h-12 lg:h-16" alt="WY Design Logo" />
             </a>
             <button
               data-collapse-toggle="navbar-default"
@@ -57,7 +58,7 @@ const Header = () => {
               <motion.div
                 initial={{ rotate: 0 }}
                 animate={{ rotate: isOpen ? 90 : 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.5 }}
                 onClick={() => setIsOpen(!isOpen)}
               >
                 {isOpen ? (
@@ -89,21 +90,30 @@ const Header = () => {
               <ul
                 className={cn(
                   'text-body-md md:text-body-xl font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg',
-                  'md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0',
+                  'md:flex-row md:space-x-4 lg:space-x-12 rtl:space-x-reverse md:mt-0 md:border-0',
                 )}
               >
-                {(isMobile ? mobileNavigation : navigation).map((item) => (
-                  <li key={`menu-${item.name}`}>
+                {navigation.map((item) => (
+                  <motion.li key={`menu-${item.name}`} >
                     <a
                       href={item.href}
-                      className="mt-2 md:hover:scale-110 block py-2 px-3 rounded md:bg-transparent text-neutral-700 md:hover:text-primary-600 md:p-0"
-                      aria-current="page"
+                      className="mt-2 block py-2 px-3 rounded md:bg-transparent text-neutral-700 md:hover:text-primary-700 md:p-0"
+                      onMouseEnter={(e) => (e.target.innerText = item.name)}
+                      onMouseLeave={(e) => (e.target.innerText = item.enName)}
                     >
-                      {item.name}
+                      {isMobile ? `${item.enName} / ${item.name}` : item.enName}
                     </a>
-                  </li>
+                  </motion.li>
                 ))}
-                {!isMobile && <Button label="CONTACT US" link="/contact" />}
+                <motion.div
+                  whileHover={{
+                    scale: 1.2,
+                    opacity: 1,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <Button label="免費諮詢" link="/consultation" />
+                </motion.div>
               </ul>
             </div>
           </div>

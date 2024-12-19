@@ -40,8 +40,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ['Noto Sans Traditional Chinese', 'Outfit', 'sans-serif'],
-      body: ['Noto Sans Traditional Chinese', 'Outfit', 'sans-serif'],
+      display: ['Microsoft JhengHei, Noto Sans Traditional Chinese', 'Outfit', 'sans-serif'],
+      body: ['Microsoft JhengHei, Noto Sans Traditional Chinese', 'Outfit', 'sans-serif'],
     },
     fontSize: {
       'display-2xl': [
