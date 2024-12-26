@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { IoClose, IoMenu } from 'react-icons/io5';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Collapse } from 'flowbite';
 
 import Button from '@/components/button';
@@ -10,7 +10,7 @@ import { cn } from '@/utils/class-names';
 
 const Header = () => {
   const navigation = [
-    { name: '關於我們' ,enName: 'About', href: '/' },
+    { name: '關於我們', enName: 'About', href: '/' },
     { name: '服務流程', enName: 'Service', href: '/service' },
     { name: '作品集', enName: 'Portfolio', href: '/portfolio' },
     { name: '聯絡資訊', enName: 'Contact', href: '/contact' },
@@ -90,11 +90,12 @@ const Header = () => {
               <ul
                 className={cn(
                   'text-body-md md:text-body-xl font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg',
-                  'md:flex-row md:space-x-4 lg:space-x-12 rtl:space-x-reverse md:mt-0 md:border-0',
+                  'md:flex-row md:mt-0 md:border-0',
+                  'sm:[&>li]:w-24 lg:[&>li]:w-32 ',
                 )}
               >
                 {navigation.map((item) => (
-                  <motion.li key={`menu-${item.name}`} >
+                  <motion.li key={`menu-${item.name}`}>
                     <a
                       href={item.href}
                       className="mt-2 block py-2 px-3 rounded md:bg-transparent text-neutral-700 md:hover:text-primary-700 md:p-0"
@@ -107,7 +108,7 @@ const Header = () => {
                 ))}
                 <motion.div
                   whileHover={{
-                    scale: 1.2,
+                    scale: 1.1,
                     opacity: 1,
                     transition: { duration: 0.2 },
                   }}

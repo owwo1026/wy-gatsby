@@ -17,10 +17,9 @@ export const DATE_FORMAT = {
   DATE_CN: 'yyyy年MM月dd日',
   TIME: 'HH:mm',
   TIME_HMS: 'HH:mm:ss',
-}
+};
 
 export function formatDate(date, format = 'YYYY-MM-DD') {
-  console.log('formatDate date', date);
   if (!date) return '';
   const taiwanTime = dayjs(date).utcOffset('+08:00');
   return taiwanTime.format(format);

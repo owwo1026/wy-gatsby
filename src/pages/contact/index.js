@@ -16,17 +16,17 @@ const IndexPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 lg:gap-18 ">
               {/* 聯絡資訊 */}
               <div className="flex flex-col gap-5 md:col-span-2 items-center">
-                <p className="font-medium text-body-lg my-6 text-center" >維域設計室內裝修有限公司</p>
+                <p className="font-medium text-body-lg my-6 text-center">維域設計室內裝修有限公司</p>
                 <div className="flex flex-col gap-2">
-                  <div className='flex gap-5 whitespace-nowrap'>
+                  <div className="flex gap-5 whitespace-nowrap">
                     <p>電話:</p>
                     <p>0972078750</p>
                   </div>
-                  <div className='flex gap-5 whitespace-nowrap'>
+                  <div className="flex gap-5 whitespace-nowrap">
                     <p>信箱:</p>
                     <p>wei.yu.design22@gmail.com</p>
                   </div>
-                  <div className='flex gap-5 whitespace-nowrap'>
+                  <div className="flex gap-5 whitespace-nowrap">
                     <p>地址:</p>
                     <p>台中市北屯區文心路三段447號4F</p>
                   </div>
