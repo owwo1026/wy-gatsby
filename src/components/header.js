@@ -11,7 +11,7 @@ import { cn } from '@/utils/class-names';
 const Header = () => {
   const navigation = [
     { name: '關於我們', enName: 'About', href: '/' },
-    { name: '服務流程', enName: 'Service', href: '/service' },
+    // { name: '服務流程', enName: 'Service', href: '/service' },
     { name: '作品集', enName: 'Portfolio', href: '/portfolio' },
     { name: '聯絡資訊', enName: 'Contact', href: '/contact' },
   ];

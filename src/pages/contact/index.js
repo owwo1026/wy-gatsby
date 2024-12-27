@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import { FaHouseChimneyWindow, FaPhone, FaSquareInstagram, FaSquareFacebook, FaLine } from 'react-icons/fa6';
+import { IoIosMail } from 'react-icons/io';
 
 import Layout from '@/components/layout';
 import Eyebrow from '@/components/eyebrow';
@@ -16,26 +19,42 @@ const IndexPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-10 lg:gap-18 ">
               {/* 聯絡資訊 */}
               <div className="flex flex-col gap-5 md:col-span-2 items-center">
-                <p className="font-medium text-body-lg my-6 text-center">維域設計室內裝修有限公司</p>
+                <p className="font-medium text-body-xl my-6 w-full">維域設計室內裝修有限公司</p>
                 <div className="flex flex-col gap-2">
-                  <div className="flex gap-5 whitespace-nowrap">
-                    <p>電話:</p>
-                    <p>0972078750</p>
+                  <div className="flex items-center gap-3 whitespace-nowrap">
+                    <FaPhone className="w-[18px] h-auto" />
+                    <a href="tel:+886972078750">0972078750</a>
                   </div>
-                  <div className="flex gap-5 whitespace-nowrap">
-                    <p>信箱:</p>
-                    <p>wei.yu.design22@gmail.com</p>
+                  <div className="flex items-center gap-3 whitespace-nowrap">
+                    <IoIosMail className="w-[18px] h-auto" />
+                    <a href="mailto:wei.yu.design22@gmail.com">wei.yu.design22@gmail.com</a>
                   </div>
-                  <div className="flex gap-5 whitespace-nowrap">
-                    <p>地址:</p>
-                    <p>台中市北屯區文心路三段447號4F</p>
+                  <div className="flex items-start gap-3">
+                    <FaHouseChimneyWindow className="w-[18px] h-auto" />
+                    <a href="https://maps.app.goo.gl/MgbaNRk2qkCqmFvj9" target="_blank" className="flex flex-col gap-1">
+                      <p>台中市北屯區文心路三段447號4F</p>
+                      <p>4F., No. 447, Sec. 3, Wenxin Rd., Beitun Dist., Taichung City 406505 , Taiwan (R.O.C.)</p>
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 whitespace-nowrap">
+                    <FaSquareFacebook className="w-[18px] h-auto" />
+                    <a href="https://www.facebook.com/wei.yu.design22" target="_blank">
+                      FB: 維域設計
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 whitespace-nowrap">
+                    <FaSquareInstagram className="w-[18px] h-auto" />
+                    <a href="https://instagram.com/wei.yu.design22" target="_blank">
+                      IG: wei.yu.design22
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 whitespace-nowrap">
+                    <FaLine className="w-[18px] h-auto" />
+                    <a href="https://line.me/R/ti/p/@138mqmgf" target="_blank">
+                      LINE: @138mqmgf
+                    </a>
                   </div>
                 </div>
-                {/* <div className='flex justify-evenly gap-5 mt-10'>
-                  <p>FB</p>
-                  <p>IG</p>
-                  <p>LINE</p>
-                </div> */}
               </div>
               {/* Google Map */}
               <div className="md:col-span-3" dangerouslySetInnerHTML={{ __html: googleMap }} />
