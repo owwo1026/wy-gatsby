@@ -98,7 +98,7 @@ const Header = () => {
                   <motion.li key={`menu-${item.name}`}>
                     <a
                       href={item.href}
-                      className="mt-2 block py-2 px-3 rounded md:bg-transparent text-neutral-700 md:hover:text-primary-700 md:p-0"
+                      className="mt-2 block py-2 px-3 rounded md:bg-transparent text-neutral-700 md:hover:text-primary-700 md:p-0 font-semibold"
                       onMouseEnter={(e) => (e.target.innerText = item.name)}
                       onMouseLeave={(e) => (e.target.innerText = item.enName)}
                     >

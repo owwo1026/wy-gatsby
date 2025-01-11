@@ -77,3 +77,6 @@ Deploy this template with one click on [Gatsby Cloud](https://www.gatsbyjs.com/c
       gatsby build
       firebase deploy
     ```
+firebase use wydesign22
+firebase use wydesign22-uat
+firebase projects:list

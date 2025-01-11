@@ -30,11 +30,9 @@ const IndexPage = () => {
   });
   const datepickerRef = useRef(null);
 
-  console.log('datepickerRef', datepickerRef?.current);
-
   useEffect(() => {
     const clearButton = datepickerRef?.current?.querySelector('.datepicker-clear-button');
-    console.log('clearButton', clearButton);
+    // console.log('clearButton', clearButton);
     if (clearButton) {
       clearButton.addEventListener('click', () => {
         console.log('Clear button clicked!');
@@ -58,7 +56,6 @@ const IndexPage = () => {
     budgetRange: z.string().min(1), // 預算範圍必填
     sqm: z.string().min(1), // 室內坪數必填
     style: z.string().min(1), // 希望風格必填
-    // items: z.string().optional(), // 施作項目可選
     remark: z.string().nullish(), // 需求說明可為空
   });
 
@@ -111,7 +108,7 @@ const IndexPage = () => {
       }),
     })
       .then((response) => {
-        if (response.result === 'success') {
+        if (response?.data?.result === 'success') {
           handleSuccess();
         } else {
           throw new Error('送出失敗');
@@ -124,7 +121,7 @@ const IndexPage = () => {
   };
 
   const onFinish = async (data) => {
-    console.log('onFinish data', data);
+    // console.log('onFinish data', data);
     // 組裝要傳送的訊息
     const msg =
       '==== [新留言] ====' +
@@ -139,10 +136,9 @@ const IndexPage = () => {
       `\n預算: ${data.budgetRange ?? ''}` +
       `\n室內坪數: ${data.sqm ?? ''}` +
       `\n希望風格: ${data.style ?? ''}` +
-      // `\n施作項目: ${data.items ?? ''}` +
       `\n需求說明: ${data.remark ?? ''}` +
       '\n==== [END] ====';
-    console.log('onFinish msg', msg);
+    // console.log('onFinish msg', msg);
     await postNotify(msg);
   };
 
